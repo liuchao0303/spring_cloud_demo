@@ -1,0 +1,12 @@
+server:
+  port: 9000 #端口
+
+# eureka配置信息
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    register-with-eureka: false #是否注册到注册中心(本身是个注册中心，因此不需要)
+    fetch-registry: false #是否eureka中获取注册信息
+    service-url: # 配置暴露给Eureka Client(服务提供者)的请求地址
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
